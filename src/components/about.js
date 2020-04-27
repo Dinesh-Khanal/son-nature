@@ -8,10 +8,10 @@ const About = () => {
         <h3 className="border border-muted rounded p-1">About NATURE</h3>
       </div>
       {/* Description */}
-      <p style={{ textAlign: "justify" }} className="px-2">
+      <p style={{ textAlign: "justify", marginBottom: 0 }} className="px-2">
         This site was designed and developed by Shailesh Khanal, just for
         practice purpose while learning React JS. The pictures used in this
-        website is NOT owned by Shailesh. Those pictures are used for
+        website are NOT owned by Shailesh. Those pictures are used for
         educational purose and to reflect the love towards the nature. If you
         are interested to connect with Shailesh, you can check his social media
         profiles, music proiles and various blogs:
@@ -67,11 +67,19 @@ const About = () => {
             </a>
           </li>
         </ul>
-        <h6 style={{ fontFamily: "Cambria", fontWeight: "bold" }}>
+        <h6
+          style={{ fontFamily: "Cambria", fontWeight: "bold" }}
+          className="mt-4"
+        >
           Other Various Blogs:
         </h6>
         <ul
-          style={{ listStyleType: "square", paddingLeft: 30, color: "silver" }}
+          className="pb-3"
+          style={{
+            listStyleType: "square",
+            paddingLeft: 30,
+            color: "silver",
+          }}
         >
           <li>
             <a href="http://screamingfrustratedsoul.blogspot.com/">

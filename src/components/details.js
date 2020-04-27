@@ -55,7 +55,7 @@ const Details = () => {
           }
         >
           <i
-            className="fas fa-shopping-cart text-warning text-dark"
+            className="fas fa-shopping-cart text-white"
             style={{ fontSize: "18px" }}
           ></i>{" "}
           {images[ind].addedToCart}

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { galleryContext } from "../context";
-import { Navbar, Nav, NavItem, CollapsibleNav } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
 const Navigation = () => {
   const { cind } = useContext(galleryContext);
@@ -13,11 +13,38 @@ const Navigation = () => {
         expand="lg"
         className="navbar-dark bg-dark container mb-0 mt-0"
       >
-        <Navbar.Brand href="#home">NATURE</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/" className="nav-link text-decoration-none">
+            <h3
+              style={{ fontFamily: "cambria", color: "#DEEF59" }}
+              className="my-0"
+            >
+              NATURE
+            </h3>
+          </Link>
+        </Navbar.Brand>
+        <span className="ml-auto d-block d-sm-none ">
+          <Link to="/cart" className="nav-link">
+            <i
+              className="fas fa-shopping-cart fa-lg text-warning"
+              style={{ fontSize: "20px" }}
+            ></i>
+            <span
+              className={
+                cind.length === 0
+                  ? "text-dark"
+                  : "badge badge-danger text-light ml-1"
+              }
+            >
+              {cind.length}
+            </span>
+          </Link>
+        </span>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">
+          <Nav>
+            <Nav.Link>
               <Link to="/" className="nav-link">
                 Home
               </Link>
@@ -30,7 +57,7 @@ const Navigation = () => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <span className="float-right">
+        <span className="ml-auto d-none d-sm-block d-md-block d-lg-block">
           <Link to="/cart" className="nav-link">
             <i
               className="fas fa-shopping-cart fa-lg text-warning"
@@ -48,41 +75,6 @@ const Navigation = () => {
           </Link>
         </span>
       </Navbar>
-
-      {/* <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top container">
-        <Link className="navbar-brand" to="/">
-          NATURE
-        </Link>
-        <ul className="navbar-nav align-items-center">
-          <li className="nav-item ml-5">
-            <Link to="/" className="nav-link">
-              Home
-            </Link>
-          </li>
-          <li className="nav-item ml-5">
-            <Link to="/about" className="nav-link">
-              About
-            </Link>
-          </li>
-        </ul>
-        <span className="float-right ml-4">
-          <Link to="/cart" className="nav-link">
-            <i
-              className="fas fa-shopping-cart fa-lg text-warning"
-              style={{ fontSize: "20px" }}
-            ></i>
-            <span
-              className={
-                cind.length === 0
-                  ? "text-dark"
-                  : "badge badge-danger text-light ml-1"
-              }
-            >
-              {cind.length}
-            </span>
-          </Link>
-        </span>
-      </nav> */}
     </div>
   );
 };

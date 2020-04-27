@@ -27,7 +27,7 @@ const Main = () => {
   };
 
   return (
-    <div className="px-2">
+    <div className="px-2 pt-2">
       <div className="row">
         {images.map((val, index) => (
           <div key={index} className="col-lg-3 col-md-4 col-sm-6 mb-3">
