@@ -27,8 +27,8 @@ const Main = () => {
   };
 
   return (
-    <>
-      <div className="row mt-4">
+    <div className="px-2">
+      <div className="row">
         {images.map((val, index) => (
           <div key={index} className="col-lg-3 col-md-4 col-sm-6 mb-3">
             <img
@@ -85,7 +85,7 @@ const Main = () => {
           </button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 };
 

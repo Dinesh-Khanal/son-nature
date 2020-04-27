@@ -17,51 +17,54 @@ const Details = () => {
   };
 
   return (
-    <div>
+    <div className="px-2 pt-2">
       {/* Image */}
+
       <img
         src={images[ind].path}
         alt=""
-        style={{ maxWidth: "100%", height: "auto", marginTop: "15px" }}
+        style={{ maxWidth: "100%", height: "auto" }}
         className="border border-success rounded"
       />
       {/* Title */}
-      <div className="mt-4 border border-muted rounded pl-2 mb-3">
+      <div className="mt-4 border border-muted rounded pl-2 mb-2">
         <h3>{images[ind].title}</h3>
       </div>
       {/* Description */}
-      <p>{images[ind].desc}</p>
+      <p className="mb-0 pb-4">{images[ind].desc} </p>
       {/* Price */}
 
       {/* <Link to="/cart"> */}
 
       {/* <button
-        className="btn float-right rounded border border-muted"
-        onClick={
-          images[ind].addedToCart === "Go to Cart"
-            ? gotocart
-            : () => handleBothFunctions(ind)
-        }
-      > */}
+          className="btn float-right rounded border border-muted"
+          onClick={
+            images[ind].addedToCart === "Go to Cart"
+              ? gotocart
+              : () => handleBothFunctions(ind)
+          }
+        > */}
 
-      <button
-        className={images[ind].cartbutton}
-        onClick={
-          images[ind].addedToCart === "Go to Cart"
-            ? gotocart
-            : () => handleBothFunctions(ind, images[ind].cartbutton)
-        }
-      >
-        <i
-          className="fas fa-shopping-cart text-warning text-dark"
-          style={{ fontSize: "18px" }}
-        ></i>{" "}
-        {images[ind].addedToCart}
-      </button>
-      {/* </Link> */}
+      <div className="pb-5">
+        <button
+          className={images[ind].cartbutton}
+          onClick={
+            images[ind].addedToCart === "Go to Cart"
+              ? gotocart
+              : () => handleBothFunctions(ind, images[ind].cartbutton)
+          }
+        >
+          <i
+            className="fas fa-shopping-cart text-warning text-dark"
+            style={{ fontSize: "18px" }}
+          ></i>{" "}
+          {images[ind].addedToCart}
+        </button>
+        {/* </Link> */}
 
-      <div className="badge badge-info mr-3 mb-5 px-2 float-right">
-        <h5>$ {images[ind].price}</h5>
+        <div className="badge badge-info mr-3 px-2 float-right">
+          <h5>$ {images[ind].price}</h5>
+        </div>
       </div>
     </div>
   );

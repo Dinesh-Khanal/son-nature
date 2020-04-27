@@ -36,19 +36,19 @@ const Cart = () => {
   };
 
   return (
-    <>
+    <div className="px-2">
       <ol style={{ paddingLeft: 0 }}>
         {cind.map((val, index) => (
           <>
             <li
               key={index}
               style={{
-                marginLeft: "3px",
+                marginLeft: "15px",
                 fontFamily: "cambria",
                 fontWeight: "bold",
               }}
             >
-              <div className="row">
+              <div className="row pt-2">
                 <div className="col-sm-3 col-12">
                   <img
                     src={images[val].path}
@@ -102,7 +102,7 @@ const Cart = () => {
           </div>
         </div>
       </ol>
-    </>
+    </div>
   );
 };
 
